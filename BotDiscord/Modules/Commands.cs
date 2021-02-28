@@ -12,20 +12,23 @@ namespace BotDiscord.Modules
 {
     public class Commands : ModuleBase<SocketCommandContext>
     {
-        [Command("ping")]
-        public async Task PingAsync()
-        {
-            await ReplyAsync("Pong!");
-        }
-
-        [Command("Salut")]
+     
+        [Command("Hi")]
         public async Task SalutAsync()
         {
-            await ReplyAsync("Salut");
+            await ReplyAsync("Hi");
         }
 
         [Command("Rand")]
         public async Task RandAsync()
+        {
+            Random random = new Random();
+            int nbre = random.Next(100);
+            await ReplyAsync($"Nombre aléatoire : {nbre}");
+        }
+        
+        [Command("Ping")]
+        public async Task PingAsync()
         {
             Random random = new Random();
             int nbre = random.Next(100);
@@ -62,5 +65,7 @@ namespace BotDiscord.Modules
 
             throw new Exception("No network adapters with an IPv4 address in the system!");
         }
+        
+        
     }
 }
