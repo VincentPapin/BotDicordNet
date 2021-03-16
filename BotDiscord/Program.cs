@@ -27,7 +27,7 @@ namespace BotDiscord
 
             client.Ready += () =>
             {
-                Console.WriteLine("je suis prêt");
+                Console.WriteLine("Ready");
                 return Task.CompletedTask;
             };
 
